@@ -1,0 +1,13 @@
+1. if you want to change the background color of widget then use the below function :
+
+android:background = "colorname";
+
+
+2. 2. if you want to change the text color then use given fuction :
+
+android:textcolor = "colorname";
+
+
+3. if you want to apply your own id then it always start with @+id/youridname
+
+android:id=
