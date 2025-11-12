@@ -1,0 +1,60 @@
+package com.yz.activitylifecycle;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+
+import androidx.annotation.Nullable;
+
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Log.v("Mylog","onCreate");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_main);
+        Log.d("Mylog","onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+        Log.e("Mylog","onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        setContentView(R.layout.activity_main);
+        Log.i("Mylog","onPause");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setContentView(R.layout.activity_main);
+        Log.v("Mylog","onRestart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        setContentView(R.layout.activity_main);
+        Log.w("Mylog","onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setContentView(R.layout.activity_main);
+        Log.d("Mylog","onDestroy");
+    }
+}
