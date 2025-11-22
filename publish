@@ -1,0 +1,187 @@
+Case Study: How to Publish an Android App on Google Play Store
+
+Introduction
+Android is the world’s most widely used operating system, and publishing an app on the Google Play Store is a crucial step for any developer who wants global reach. However, this process involves several technical, financial, and security-related steps. This case study explains how an Android application is published on the Google Play Store, including the process of creating required credentials such as the Google Play Console account, app signing keys, API credentials, and developer profile settings.
+
+⸻
+
+Requirements for Publishing
+Before uploading the app, several things must be prepared:
+
+2.1 Google Play Developer Account
+• Cost: $25 one-time fee
+• Requires a Gmail account
+• Must add developer details like:
+• Name
+• Contact Email
+• Phone Number
+• Physical Address
+
+2.2 App Signing Credentials
+
+Google requires a secure signing method:
+• Keystore file (.jks)
+• App signing key alias
+• Key password
+• Keystore password
+
+2.3 App Assets
+
+To publish an app, the following are mandatory:
+• App Name
+• App Icon (512×512)
+• Feature Graphic (1024×500)
+• Screenshots (minimum 2)
+• Short Description (80 characters)
+• Full Description (up to 4,000 characters)
+• Category Selection (App/Game + Type)
+• Content Rating Form
+• Privacy Policy URL
+• APK or AAB file
+
+⸻
+
+Step-by-Step Publishing Process
+3.1 Step 1: Create a Google Play Developer Account
+1. Go to play.google.com/console
+2. Login with Gmail
+3. Pay the $25 registration fee
+4. Accept Developer distribution agreement
+5. Add personal details for verification
+
+⸻
+
+3.2 Step 2: Generate App Signing Credentials (Keystore)
+
+Android apps must be digitally signed.
+
+Command (using Android Studio or CMD):
+
+keytool -genkey -v -keystore yourapp-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias your_alias
+
+3.3 Step 3: Prepare Android App Bundle (AAB)
+
+Since 2021, Play Store accepts only AAB, not APK.
+
+In Android Studio:
+
+Build → Generate Signed Bundle/APK → Android App Bundle (.aab)
+
+Provide:
+• Keystore path
+• Keystore password
+• Alias name
+• Key password
+
+Android Studio will produce a signed AAB.
+
+⸻
+
+3.4 Step 4: Create a New App in Play Console
+1. Open Play Console → “Create app”
+2. Choose:
+• App name
+• Default language
+• App type (App or Game)
+• Free or Paid
+3. Accept declarations
+
+⸻
+
+3.5 Step 5: Set Up Store Listing
+
+Fill the following:
+
+App Details
+• Short description
+• Full description
+
+Graphics
+• App Icon (512×512)
+• Feature Graphic (1024×500)
+• Screenshots (mobile/tablet/Android TV/watch)
+
+Categorization
+• App category
+• Tags
+
+Contact Details
+• Email
+• Phone
+• Website (optional)
+
+⸻
+
+3.6 Step 6: Upload AAB File
+1. Go to Production → Create New Release
+2. Choose Google Play App Signing
+3. Upload App Bundle (.aab)
+4. Add release notes
+5. Save
+
+⸻
+
+3.7 Step 7: App Content & Compliance
+
+Complete mandatory forms:
+• Privacy Policy URL
+• Content rating questionnaire
+• Data Safety form
+• Target audience
+• Ads declaration
+• App permissions
+• News policy (if needed)
+
+⸻
+
+3.8 Step 8: Review & Submit
+
+Once all sections show green checkmarks, press:
+
+👉 Submit for Review
+
+Google reviews the app in:
+• 4 to 7 hours for updates
+• 1 to 3 days for new apps
+
+⸻
+
+Important Credentials Involved
+4.1 Google Play Console Credentials
+• Developer Account Email
+• Password
+• 2-Step Verification
+• Developer Profile Details
+
+4.2 App Signing Credentials
+• Keystore file (.jks)
+• Keystore password
+• Key alias
+• Alias password
+
+NOTE: Never share these credentials publicly.
+
+4.3 API Credentials (Optional but useful)
+
+You may create:
+• Firebase API key
+• Google Maps API key
+• OAuth 2.0 client ID
+• FCM server key
+
+Used for push notifications, maps, analytics, etc.
+
+⸻
+
+Challenges Faced During Publishing
+App rejected due to policy violation
+Incorrect screenshots
+Missing privacy policy
+Wrong keystore lost
+Issues in Data Safety form
+App crash on startup
+Package name mismatch
+⸻
+
+Conclusion
+Publishing an Android app on the Google Play Store requires careful preparation of credentials, assets, and policy documents. The process is not just about uploading an app but ensuring it follows Google’s privacy, security, and content rules. With proper credentials such as the developer account, signing keys, and API keys, the app can be safely published and updated in the future. This case study helps students and developers understand the professional workflow of deploying a fully functioning Android application to the Play Store.
