@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
+
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+
+
+
+
+
+package com.yz.demo_video_view;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+public class MainActivity extends Activity {
+
+    VideoView vw;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        vw = findViewById(R.id.videoView);
+        String vp = "android.resource://"+getPackageName()+"/"+R.raw.simple;
+        Uri uri = Uri.parse(vp);
+        vw.setVideoURI(uri);
+        vw.start();
+
+        MediaController mc = new MediaController(this);
+        mc.setAnchorView(vw);
+        vw.setMediaController(mc);
+
+    }
+}
